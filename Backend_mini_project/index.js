@@ -9,6 +9,10 @@
 
 
 //dynamic routing
+//sabse phle browser par jao url  likjiye apni psnd ka and  enter dabao ab us url ka  route  ko create karo and res bhejo khuch bhi 
+
+
+//dynamic routing
 
 const express = require('express');
 const app = express();
@@ -28,6 +32,9 @@ app.set('view engine', 'ejs');
 app.get("/", function (req, res) {
     res.render('index');
 });
+app.get("/profile/:username",function(req,res){
+    res.send(`welcome ${req.params.username}`);
+})
 
 // Start the server
 app.listen(5000, function () {
