@@ -34,6 +34,11 @@ app.get("/", function (req, res) {
 });
 app.get("/profile/:username",function(req,res){
     res.send(`welcome ${req.params.username}`);
+
+})
+
+app.get("/profile/name/:age",function(req,res){
+    res.send(`The age is ${req.params.age} `)
 })
 
 // Start the server
