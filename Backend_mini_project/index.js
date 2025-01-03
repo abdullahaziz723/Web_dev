@@ -1,7 +1,7 @@
 //setting up the route
 
 //setting up the ejs for ejs pages
-//install ejs from npm
+//install ejs from npm using 
 //setting up ejs for view engine
 
 //setting up  the public static pages
