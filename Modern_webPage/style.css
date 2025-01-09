@@ -88,16 +88,19 @@ html,body{
 #hright{
     width: 25% ;
     /* height: 80px;  */
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     color: #fff;
-}
+} 
 
-#hright{
+
+#hright  p{
 text-align: right;
 font-size: 14px;
+font-weight: 300;
+margin-bottom: 50px;
 }
 #hleft{
     min-width: 50% ;
