@@ -16,5 +16,6 @@ function abcd (){
     var a =12;
     function abc(){
         let b= 12;
+        const a=12;
     }
 }
