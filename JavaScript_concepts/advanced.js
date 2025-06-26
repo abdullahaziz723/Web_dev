@@ -29,6 +29,7 @@
 
 
     //what is a closure in a js ?
+    // //closure is a function that has access to its own scope, the outer function's scope, and the global scope even after the outer function has finished executing.
     function abcd (){
         var x =12;
         return function abc(){
