@@ -1,26 +1,11 @@
 
-function Profile(){
+  function User({user}){
     return(
         <div>
-            <h1>this is first component</h1>
+            <h1>{user.name}</h1>
+            <h1>{user.age} </h1>
         </div>
     )
 }
 
- export  const Key = "12345@#$";
-export function Profile2(){    return(
-        <div>
-            <h1>this is key  component</h1>
-        </div>
-    )
-}
-
- export function Profile3(){
-    return(
-        <div>
-            <h1>this is third component</h1>
-        </div>
-    )
-}
-
-export default Profile;
+export default User;
