@@ -4,6 +4,7 @@ const Counter = () => {
   return (
     <div>
       <h1>Counter :{count}</h1>
+      <h2>asdf</h2>
       <button onClick={() => setcount(count + 1)}>click me</button>
     </div>
   );
