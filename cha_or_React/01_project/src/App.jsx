@@ -19,10 +19,18 @@ function App() {
     }
   };
 
+  const addvValue =()=>
+  {
+    setCount(prevcounter=> prevcounter + 1)
+    setCount(prevcounter=> prevcounter + 1)
+    setCount(prevcounter=> prevcounter + 1)
+    setCount(prevcounter=> prevcounter + 1)};
+  
+
   return (
     <>
       <h1>chai and react :{count} </h1>
-      <button onClick={increase}>add value</button>
+      <button onClick={addvValue}>add value</button>
       <br />
       <br />
       <button onClick={decrease}>remove value</button>
