@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import "./App.css";
 
@@ -16,12 +16,14 @@ function App() {
     if (symbol) str += "!@#$%^&[]()";
 
     for (let i = 0; i <= length; i++) {
-      let char = Math.floor(Math.random * str.length + 1);
-      pass = str.charAt(char);
+      let char = Math.floor(Math.random() * str.length + 1);
+      pass += str.charAt(char);
     }
 
     setpassword(pass);
   }, [length, number, symbol, setpassword]);
+
+  useEffect(()=>{PasswordGenerator()},[length,number,symbol,PasswordGenerator]);
 
   return (
     <>
