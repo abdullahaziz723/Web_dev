@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect,useRef } from "react";
 
 import "./App.css";
 
@@ -8,6 +8,9 @@ function App() {
   const [symbol, setSymbol] = useState(false);
   const [Password, setpassword] = useState("");
 
+  //useref is used to memoize the PasswordGenerator function so that it does not get recreated on every render
+  const PasswordGeneratorRef = useRef(null);
+ 
   const PasswordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabdcdefghijklmnopqrstuvwxyz";
@@ -23,6 +26,11 @@ function App() {
     setpassword(pass);
   }, [length, number, symbol, setpassword]);
 
+
+  const copyPasswordToClipboard = useRef(() => {
+    
+  },[Password])
+
   useEffect(()=>{PasswordGenerator()},[length,number,symbol,PasswordGenerator]);
 
   return (
@@ -36,8 +44,9 @@ function App() {
             className="outline-none w-full py-1 px-3"
             placeholder="password"
             readOnly
+            ref={PasswordGeneratorRef}
           />
-          <button className="outline-none bg-blue-700 text-white px-3 py-1 shrink-0" >Copy</button>
+          <button onClick={copyPasswordToClipboard} className="outline-none bg-blue-700 text-white px-3 py-1 shrink-0" >Copy</button>
         </div>
         <div className="flex text-sm gap-x-2" >
           <div className="flex items-center gap-x-2">
