@@ -3,14 +3,14 @@ import { useState, useCallback, useEffect,useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [length, setLength] = useState(8);
+  const [length, setLength] = useState(9);
   const [number, setNumber] = useState(false);
   const [symbol, setSymbol] = useState(false);
   const [Password, setpassword] = useState("");
 
   //useref is used to memoize the PasswordGenerator function so that it does not get recreated on every render
   const PasswordGeneratorRef = useRef(null);
- 
+
   const PasswordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabdcdefghijklmnopqrstuvwxyz";
