@@ -1,13 +1,21 @@
-const http = require('http')
+const express = require('express');
+const app =express()
 
-const server =http.createServer((req, res) => {
-if(req.url === '/'){
-    res.end('Welcome to our home page')
-}
-if(req.url === '/about'){
-    res.end('Here is our short history')
-}
+app.set('view engine','ejs')
+
+
+app.use((req,res,next)=>{
+    console.log('New Request Made:');
+    return next()
+})
+
+app.get('/',(req,res)=>{
+    res.render('index')
+})
+
+app.get('/about',(req,res)=>{
+    res.send('About Page')
 })
 
 
-server.listen(5000);
+app.listen(5000)
