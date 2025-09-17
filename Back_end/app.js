@@ -6,12 +6,15 @@ app.use(morgan('dev'))
 //middle ware used to extracr data in json format and urlencoded format
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+//to serve static files like css,images
+app.use(express.static('public'))
 
 app.set('view engine','ejs')
 
 
 app.use((req,res,next)=>{
     console.log('New Request Made:');
+
     return next()
 })
 
