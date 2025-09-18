@@ -24,6 +24,15 @@ app.use((req, res, next) => {
   return next();
 });
 
+
+app.get('/get-users',(req,res)=>{
+userModel.find({
+    email:'abdullahaziz723@gmail.com'
+}).then((users)=>{
+    res.send(users)
+})
+})
+
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -47,6 +56,28 @@ app.post("/register",async (req, res) => {
 
     res.send(newUser);
 });
+
+
+app.get('/update-user',async(req,res)=>{
+   await userModel.findOneAndUpdate({
+        username:'anshika'
+    },{
+        email:'c@c.com'
+    })
+
+    res.send('user updated')
+})
+
+
+app.get('/delete-user',async(req,res)=>{
+   await userModel.findOneAndDelete({
+        username:'anshika'
+    })
+
+    res.send('user deleted')
+})
+
+
 app.post("/get-form-data", (req, res) => {
   console.log(req.body);
   res.send("Form Data Received");
