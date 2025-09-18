@@ -45,6 +45,8 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
+// to create user
+
 app.post("/register",async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -57,7 +59,7 @@ app.post("/register",async (req, res) => {
     res.send(newUser);
 });
 
-
+//to update user
 app.get('/update-user',async(req,res)=>{
    await userModel.findOneAndUpdate({
         username:'anshika'
@@ -68,7 +70,7 @@ app.get('/update-user',async(req,res)=>{
     res.send('user updated')
 })
 
-
+// delete user
 app.get('/delete-user',async(req,res)=>{
    await userModel.findOneAndDelete({
         username:'anshika'
@@ -77,7 +79,7 @@ app.get('/delete-user',async(req,res)=>{
     res.send('user deleted')
 })
 
-
+// to handle form data
 app.post("/get-form-data", (req, res) => {
   console.log(req.body);
   res.send("Form Data Received");
