@@ -2,6 +2,8 @@ const express= require('express');
 const userRouter = require('./routes/user.routes');
 
 const app= express();
+app.use(express.urlencoded({extended:true}));
+app.use(express.json())
 
 app.set('view engine','ejs');
 
