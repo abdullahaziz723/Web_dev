@@ -22,7 +22,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: [6, "Too short password"],
-    maxlength: [30, "Too long password"],
+    minlength: [3, "Too short password"],
+    maxlength: 100
   },
+  
 });
+
+const userModel = mongoose.model("user", userSchema);
+module.exports = userModel;
