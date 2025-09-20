@@ -12,6 +12,7 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
+// register route
 router.post(
   "/register",
   body("email").trim().isEmail(),
@@ -41,6 +42,8 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
+
+//login route
 router.post(
   "/login",
   body("username").trim().not().isEmpty(),
